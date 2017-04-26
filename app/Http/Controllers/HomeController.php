@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Course;
 class HomeController extends Controller
 {
     /**
@@ -19,10 +19,13 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
-        return view('client.home.index');
+        $courses = Course::where('id',1)->first();
+        return view('client.home.index')->with([
+            'course' => $courses,
+        ]);
     }
 }
