@@ -32,40 +32,22 @@
                         <div id="menu1" class="tab-pane fade">
                             <div class="sidebar content-box" style="display: block;">
                                 <ul class="nav">
+                                @foreach($chapters as $chapter)
                                     <!-- Main menu -->
-                                    <li class="submenu">
-                                        <a href="#">
-                                            <i class="glyphicon glyphicon-list"></i> Pages
-                                            <span class="caret pull-right"></span>
-                                        </a>
-                                        <!-- Sub menu -->
-                                        <ul style="display: none;">
-                                            <li><a href="">Bài 1</a></li>
-                                            <li><a href="">Bài 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="submenu">
-                                        <a href="#">
-                                            <i class="glyphicon glyphicon-list"></i> Pages
-                                            <span class="caret pull-right"></span>
-                                        </a>
-                                        <!-- Sub menu -->
-                                        <ul style="display: none;">
-                                            <li><a href="">Bài 1</a></li>
-                                            <li><a href="">Bài 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="submenu">
-                                        <a href="#">
-                                            <i class="glyphicon glyphicon-list"></i> Pages
-                                            <span class="caret pull-right"></span>
-                                        </a>
-                                        <!-- Sub menu -->
-                                        <ul style="display: none;">
-                                            <li><a href="">Bài 1</a></li>
-                                            <li><a href="">Bài 2</a></li>
-                                        </ul>
-                                    </li>
+                                        <li class="submenu">
+                                            <a href="#">
+                                                <span style="margin-right: 20px;">{{$chapter->id}}</span> <span>{{$chapter->name}}</span>
+                                                <span class="caret pull-right"></span>
+                                            </a>
+                                            <!-- Sub menu -->
+                                            <ul style="display: none;">
+                                                <?php $lessons = array_shift($listLessons) ?>
+                                                @foreach($lessons as $lesson)
+                                                    <li><a href="https://www.google.com.vn/webhp?hl=vi&sa=X&ved=0ahUKEwjDsayPnsPTAhWFppQKHVgTDwMQPAgD">{{$lesson->name}}</a></li>
+                                                    @endforeach
+                                            </ul>
+                                        </li>
+                                @endforeach
                                 </ul>
                             </div>
                         </div>
