@@ -15,10 +15,22 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
+//
+// const app = new Vue({
+//     el: '#app'
+// });
 
-const app = new Vue({
-    el: '#app'
+$(document).ready(function () {
+    $("#submit-form").submit(function (e) {
+        e.preventDefault();
+        var html = $('#editor-html').val();
+        var css = $('#editor-css').val();
+        var result = $('#result-content');
+        result.ready(function () {
+            result.contents().find("body").html(html);
+        });
+    });
 });
 
 $(document).ready(function(){
