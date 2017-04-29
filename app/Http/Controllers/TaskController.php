@@ -22,9 +22,9 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index($idLesson)
     {
-        $tasks = Task::where('lesson_id','1')->first();
+        $tasks = Task::where('lesson_id',$idLesson)->first();
 
         return view('client.lesson.index')->with([
             'tasks' => $tasks

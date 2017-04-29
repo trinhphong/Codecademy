@@ -16,7 +16,7 @@
                         <div class="title">
                             <h1 style="margin-bottom: 0px">{{$course->name}}</h1>
                             <h3 style="margin-top: 10px">Currently on: HTML Elements</h3>
-                            <button type="submit" class="button btn-success" style="width: 150px; height: 50px" href="{{route('editor')}}">START</button>
+                            <button type="submit" class="button btn-success" style="width: 150px; height: 50px">START</button>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                                             <ul style="display: none;">
                                                 <?php $lessons = array_shift($listLessons) ?>
                                                 @foreach($lessons as $lesson)
-                                                    <li><a href="https://www.google.com.vn/webhp?hl=vi&sa=X&ved=0ahUKEwjDsayPnsPTAhWFppQKHVgTDwMQPAgD">{{$lesson->name}}</a></li>
+                                                    <li><a href="{{route('task.show',$lesson)}}">{{$lesson->name}}</a></li>
                                                     @endforeach
                                             </ul>
                                         </li>

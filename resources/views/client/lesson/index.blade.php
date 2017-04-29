@@ -20,7 +20,7 @@
     @endsection
 
 @section('content')
-    <div class="container-fluid" onload="con_cac()">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-4" style="overflow-y: scroll;position: absolute;padding: 0; top: 7%; right: 66.66666666666667%; bottom: 5%;left: 0%;">
                 <div class="panel panel-default" style="padding: 0;height: 100%">
@@ -63,6 +63,12 @@
             <div class="col-md-4" style="padding: 0; position: absolute;top: 7%; right: 0%; bottom: 5%;left: 66.66666666666666%;%;">
                 <iframe id="result-content" style="height: 99%;width: 100%"></iframe>
             </div>
+        </div>
+    </div>
+    <div class="col-md-12" style="position:absolute; top:95%; height: 50px;background-color: #282a36;width: 100%">
+        <div class="col-md-4" style="background-color: black; height: 50px;width: 33.333333333%; left: 33.333333333%">
+            <button type="submit" class="btn btn-primary pull-left">Back</button>
+            <button type="submit" class="btn btn-primary pull-right">Next</button>
         </div>
     </div>
     <script>

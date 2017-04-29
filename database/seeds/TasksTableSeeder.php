@@ -102,5 +102,53 @@ a.btn:hover {
 }',
             'lesson_id' => '1',
         ]);
+
+        DB::table('tasks')->insert([
+           'content' => 'A web browser must know what language a document is written in before they can process the contents of the document.
+
+You can let web browsers know that you are using the HTML language by starting your HTML document with a document type declaration.
+
+The declaration is the following:
+
+<!DOCTYPE html>
+This declaration is an instruction. It tells the browser what type of document to expect, along with what version of HTML is being used in the document. <!DOCTYPE html>must be the first line of code in all of your HTML documents.
+
+Note: If you don\'t use the doctype declaration, your HTML code will likely still work, however, it\'s risky. Right now, the browser will correctly assume that you are using HTML5, as HTML5 is the current standard. In the future, however, a new standard will override HTML5. Future browsers may assume you\'re using a different, newer standard, in which case your document will be interpreted incorrectly. To make sure your document is forever interpreted correctly, always include <!DOCTYPE html> at the very beginning of your HTML documents.',
+            'source_code_html' => '',
+            'source_code_css' => '',
+            'lesson_id' => '1'
+        ]);
+
+        DB::table('tasks')->insert([
+           'content' => 'Headings in HTML can be likened to headings in other types of media. For example, in newspapers, large headings are typically used to capture a reader\'s attention. Other times, headings are used to describe content, like the title of a movie or an educational article.',
+            'source_code_html' => '<!DOCTYPE html>
+<html>
+<head>
+  <title>Animals Around the World</title>
+</head>
+<body>
+  <!-- cmt con cac -->
+  <h1>The Brown Bear</h1>
+  <p>The brown bear (Ursus arctos) is native to parts of northern Eurasia and North America. Its conservation status is currently "Least Concern." There are many subspecies within the brown bear species, including the Atlas bear and the Himalayan brown bear.</p>
+  <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">Learn More</a>
+  <p>The following are subspecies of bears:</p>
+  <ul>
+    <li>Arctos</li>
+    <li>Collarus</li>
+    <li>Horribilis</li>
+    <li>Nelsoni (extinct)</li>
+  </ul>
+  <p>The following countries have the largest populations<br> of brown bears:</p>
+  <ol>
+    <li>Russia</li>
+    <li>United States</li>
+    <li>Canada</li>    
+	</ol>
+  <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank"><img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/web101-image_brownbear.jpg" alt="This is a Bear"></a>
+</body> 
+</html>',
+            'source_code_css' => '',
+            'lesson_id' => '2'
+        ]);
     }
 }
