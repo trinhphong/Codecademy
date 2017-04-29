@@ -16,7 +16,7 @@
                         <div class="title">
                             <h1 style="margin-bottom: 0px">{{$course->name}}</h1>
                             <h3 style="margin-top: 10px">Currently on: HTML Elements</h3>
-                            <button type="submit" class="button btn-success" style="width: 150px; height: 50px">START</button>
+                            <button type="submit" class="button btn-success" style="width: 150px; height: 50px" href="{{route('editor')}}">START</button>
                         </div>
                     </div>
                 </div>

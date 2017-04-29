@@ -13,4 +13,8 @@ class Lesson extends Model
     public function course() {
         return $this->belongsTo('App\Chapter');
     }
+
+    public function task() {
+        return $this->hasMany('App\Task');
+    }
 }

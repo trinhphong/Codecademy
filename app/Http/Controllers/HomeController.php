@@ -28,15 +28,17 @@ class HomeController extends Controller
         $courses = Course::where('id',1)->first();
         $chapters = Chapter::where('course_id',1)->get();
         $listLessons = array();
-        foreach($chapters as $chapter)
-        {
-            $lessons = Lesson::where('chapter_id',$chapter->id)->get();
-            array_push($listLessons,$lessons);
+        foreach($chapters as $chapter) {
+            $lessons = Lesson::where('chapter_id', $chapter->id)->get();
+            array_push($listLessons, $lessons);
         }
+
         return view('client.home.index')->with([
             'course' => $courses,
             'chapters' => $chapters,
             'listLessons'=> $listLessons
         ]);
     }
+
+
 }

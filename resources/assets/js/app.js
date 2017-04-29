@@ -28,6 +28,7 @@ $(document).ready(function () {
         var css = $('#editor-css').val();
         var result = $('#result-content');
         result.ready(function () {
+            result.contents().find("head").append('<style>'+css+'</style>');
             result.contents().find("body").html(html);
         });
     });

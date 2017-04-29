@@ -18,9 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/preview', function() {
-  return view('/client/lesson/index');
-});
+Route::get('/preview','TaskController@index')->name('editor');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');

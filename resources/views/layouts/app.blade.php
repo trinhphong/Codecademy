@@ -21,7 +21,7 @@
         ]) !!};
     </script>
 </head>
-<body>
+<body @yield('on_load')>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top" @yield('fixed-nav-top')>
             <div class="container">
