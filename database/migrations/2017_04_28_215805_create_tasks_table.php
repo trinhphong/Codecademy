@@ -20,6 +20,7 @@ class CreateTasksTable extends Migration
             $table->mediumText('source_code_css');
             $table->integer('lesson_id')->unsigned();
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->integer('stt')->unsigned();
             $table->timestamps();
         });
     }

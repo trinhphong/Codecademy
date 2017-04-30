@@ -27,12 +27,12 @@ class TaskController extends Controller
     {
         $lesson = Lesson::where('id',$lessonID)->first();
         $task = Task::where('lesson_id',$lessonID)->first();
-        $tasks = Task::where(['lesson_id'=>$lessonID])->get();
-        $length = count($tasks);
+        $tasks = Task::where('lesson_id',$lessonID)->get();
+        $count = count($tasks);
         return view('client.lesson.index')->with([
             'task' => $task,
             'lesson' => $lesson,
-            'length' => $length
+            'count' => $count
         ]);
     }
 
@@ -41,11 +41,11 @@ class TaskController extends Controller
         $lesson = Lesson::where('id',$lessonID)->first();
         $task = Task::where(['lesson_id'=>$lessonID,'id' => $taskID])->first();
         $tasks = Task::where(['lesson_id'=>$lessonID])->get();
-        $length = count($tasks);
+        $count = count($tasks);
         return view('client.lesson.index')->with([
             'task' => $task,
             'lesson' => $lesson,
-            'length' => $length
+            'count' => $count
         ]);
     }
 }

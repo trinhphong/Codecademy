@@ -32,10 +32,10 @@
                         {{$task->content}}
                         <div class="panel panel-default" style="margin: 0">
                             <div class="panel-heading">
-                                <p>Heading 2</p>
+                                <p>Instructions</p>
                             </div>
                             <div class="panel panel-body">
-                                <p>In the code editor to the right, type your name in between  and , then press Run.</p>
+                                <p>In the code editor to the right, type your name in between <code>&lt;h1&gt;</code> and <code>&lt;/h1&gt;</code>, then press Run.</p>
                             </div>
                         </div>
                     </div>
@@ -67,13 +67,18 @@
     </div>
     <div class="col-md-12" style="position:absolute; top:95%; height: 50px;background-color: #282a36;width: 100%">
         <div class="col-md-4" style="background-color: black; height: 50px;width: 33.333333333%; left: 33.333333333%">
-            @if($task->id > 0)
+            @if($task->stt > 1)
                 <a type="submit" class="btn btn-primary pull-left" href="#" onclick="history.back()">Back</a>
+            @else
+                <a type="submit" class="btn btn-primary pull-left" href="#" onclick="">Back</a>
                 @endif
-            @if ($task->id <= $length - 1)
+
+            <div style="display: inline; font-size: large; color: white;position: absolute; left: 45%">{{($task->stt)}}/{{$count}}</div>
+
+            @if ($task->stt < $count)
                 <a type="submit" class="btn btn-primary pull-right" href="{{route('task.showNext',['lesson'=>$lesson,'taskID'=>$task->id+1])}}">Next</a>
             @else
-                <a type="submit" class="btn btn-primary pull-right" href="#">Next</a>
+                <a type="submit" class="btn btn-primary pull-right" href="#">Next Lesson</a>
                 @endif
         </div>
     </div>

@@ -12,7 +12,8 @@ class TasksTableSeeder extends Seeder
     public function run()
     {
         DB::table('tasks')->insert([
-            'content' => 'HTML is the language used to create the web pages you visit everyday. It provides a logical way to structure content for web pages.
+            'content' => 'HTML
+             is the language\n used to create the web pages you visit everyday. It provides a logical way to structure content for web pages.
 
 Let\'s analyze the acronym "HTML", as it contains a lot of useful information. HTML stands for HyperText Markup Language.
 
@@ -101,6 +102,7 @@ a.btn:hover {
 	transition: box-shadow 1s ease;
 }',
             'lesson_id' => '1',
+            'stt' => '1'
         ]);
 
         DB::table('tasks')->insert([
@@ -116,7 +118,8 @@ This declaration is an instruction. It tells the browser what type of document t
 Note: If you don\'t use the doctype declaration, your HTML code will likely still work, however, it\'s risky. Right now, the browser will correctly assume that you are using HTML5, as HTML5 is the current standard. In the future, however, a new standard will override HTML5. Future browsers may assume you\'re using a different, newer standard, in which case your document will be interpreted incorrectly. To make sure your document is forever interpreted correctly, always include <!DOCTYPE html> at the very beginning of your HTML documents.',
             'source_code_html' => '',
             'source_code_css' => '',
-            'lesson_id' => '1'
+            'lesson_id' => '1',
+            'stt' => '2'
         ]);
 
         DB::table('tasks')->insert([
@@ -148,7 +151,8 @@ Note: If you don\'t use the doctype declaration, your HTML code will likely stil
 </body> 
 </html>',
             'source_code_css' => '',
-            'lesson_id' => '2'
+            'lesson_id' => '2',
+            'stt' => '1'
         ]);
 
         DB::table('tasks')->insert([
@@ -177,7 +181,8 @@ The following example code uses a headline intended to capture a reader\'s atten
 </body> 
 </html>',
             'source_code_css' => '',
-            'lesson_id' => 2
+            'lesson_id' => '2',
+            'stt' => '2'
         ]);
     }
 }
