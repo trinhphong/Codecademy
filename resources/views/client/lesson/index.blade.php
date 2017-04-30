@@ -35,7 +35,9 @@
                                 <p>Instructions</p>
                             </div>
                             <div class="panel panel-body">
-                                <p>In the code editor to the right, type your name in between <code>&lt;h1&gt;</code> and <code>&lt;/h1&gt;</code>, then press Run.</p>
+                                @foreach($instructions as $instruction)
+                                    <p>{{$instruction->content}}</p>
+                                    @endforeach
                             </div>
                         </div>
                     </div>

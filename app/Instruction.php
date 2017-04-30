@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Instruction extends Model
 {
     protected $table = 'instructions';
-    protected $fillable = ['name','content','tasks_id',];
+    protected $fillable = ['content','solution','tasks_id',];
     public $timestamps = false;
 
     public function task()

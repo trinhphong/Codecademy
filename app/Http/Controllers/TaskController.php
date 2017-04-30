@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Instruction;
 use App\Lesson;
 use Illuminate\Http\Request;
 use App\Task;
@@ -29,10 +30,12 @@ class TaskController extends Controller
         $task = Task::where('lesson_id',$lessonID)->first();
         $tasks = Task::where('lesson_id',$lessonID)->get();
         $count = count($tasks);
+        $instructions = Instruction::where('task_id',$task->id)->get();
         return view('client.lesson.index')->with([
             'task' => $task,
             'lesson' => $lesson,
-            'count' => $count
+            'count' => $count,
+            'instructions' => $instructions
         ]);
     }
 
@@ -42,10 +45,12 @@ class TaskController extends Controller
         $task = Task::where(['lesson_id'=>$lessonID,'id' => $taskID])->first();
         $tasks = Task::where(['lesson_id'=>$lessonID])->get();
         $count = count($tasks);
+        $instructions = Instruction::where('task_id',$taskID)->get();
         return view('client.lesson.index')->with([
             'task' => $task,
             'lesson' => $lesson,
-            'count' => $count
+            'count' => $count,
+            'instructions' => $instructions
         ]);
     }
 }
