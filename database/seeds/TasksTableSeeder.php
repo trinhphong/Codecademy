@@ -150,5 +150,34 @@ Note: If you don\'t use the doctype declaration, your HTML code will likely stil
             'source_code_css' => '',
             'lesson_id' => '2'
         ]);
+
+        DB::table('tasks')->insert([
+            'content' => 'Headings in HTML can be likened to headings in other types of media. For example, in newspapers, large headings are typically used to capture a reader\'s attention. Other times, headings are used to describe content, like the title of a movie or an educational article.
+
+HTML follows a similar pattern. In HTML, there are six different headings, or heading elements. Headings can be used for a variety of purposes, like titling sections, articles, or other forms of content.
+
+The following is the list of heading elements available in HTML. They are ordered from largest to smallest in size.
+
+<h1> - used for main headings, all other smaller headings are used for subheadings.
+<h2>
+<h3>
+<h4>
+<h5>
+<h6>
+The following example code uses a headline intended to capture a reader\'s attention. It uses the largest heading available, the main heading element:
+
+<h1>BREAKING NEWS</h1>',
+            'source_code_html' => '<!DOCTYPE html>
+<html>
+<head>
+  <title>Animals Around the World</title>
+</head>
+<body>
+
+</body> 
+</html>',
+            'source_code_css' => '',
+            'lesson_id' => 2
+        ]);
     }
 }

@@ -16,7 +16,7 @@
     @endsection
 
 @section('on_load')
-    onload="con_cac()"
+    onload="loadIframe()"
     @endsection
 
 @section('content')
@@ -29,7 +29,7 @@
                         Learn
                     </div>
                     <div id="ss"class="panel-body" style="padding: 0 10px 0 10px;">
-                        {{$tasks->content}}
+                        {{$task->content}}
                         <div class="panel panel-default" style="margin: 0">
                             <div class="panel-heading">
                                 <p>Heading 2</p>
@@ -49,10 +49,10 @@
                     </ul>
                     <div class="tab-content" style="height: 85%">
                         <div id="home" class="tab-pane fade in active" style="height: 100%">
-                            <textarea id="editor-html">{{$tasks->source_code_html}}</textarea>
+                            <textarea id="editor-html">{{$task->source_code_html}}</textarea>
                         </div>
                         <div id="menu1" class="tab-pane fade" style="height: 100%">
-                            <textarea id="editor-css">{{$tasks->source_code_css}}</textarea>
+                            <textarea id="editor-css">{{$task->source_code_css}}</textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success pull-right">
@@ -67,8 +67,14 @@
     </div>
     <div class="col-md-12" style="position:absolute; top:95%; height: 50px;background-color: #282a36;width: 100%">
         <div class="col-md-4" style="background-color: black; height: 50px;width: 33.333333333%; left: 33.333333333%">
-            <button type="submit" class="btn btn-primary pull-left">Back</button>
-            <button type="submit" class="btn btn-primary pull-right">Next</button>
+            @if($task->id > 0)
+                <a type="submit" class="btn btn-primary pull-left" href="#" onclick="history.back()">Back</a>
+                @endif
+            @if ($task->id <= $length - 1)
+                <a type="submit" class="btn btn-primary pull-right" href="{{route('task.showNext',['lesson'=>$lesson,'taskID'=>$task->id+1])}}">Next</a>
+            @else
+                <a type="submit" class="btn btn-primary pull-right" href="#">Next</a>
+                @endif
         </div>
     </div>
     <script>
@@ -86,7 +92,7 @@
             scrollbarStyle: "overlay"
         });
 
-        function con_cac() {
+        function loadIframe() {
             var html = $('#editor-html').val();
             var css = $('#editor-css').val();
             var result = $('#result-content');
@@ -95,6 +101,5 @@
                 result.contents().find("body").html(html);
             });
         }
-
     </script>
 @endsection

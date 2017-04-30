@@ -18,7 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/lesson/{lesson}/tasks','TaskController@index')->name('task.show');
+Route::get('/lessons/{lesson}/tasks/','TaskController@index')->name('task.show');
+Route::get('/lessons/{lesson}/tasks/{taskID}','TaskController@showNext')->name('task.showNext');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');

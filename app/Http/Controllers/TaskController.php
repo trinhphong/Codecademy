@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lesson;
 use Illuminate\Http\Request;
 use App\Task;
 
@@ -22,12 +23,29 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index($idLesson)
+    public function index($lessonID)
     {
-        $tasks = Task::where('lesson_id',$idLesson)->first();
-
+        $lesson = Lesson::where('id',$lessonID)->first();
+        $task = Task::where('lesson_id',$lessonID)->first();
+        $tasks = Task::where(['lesson_id'=>$lessonID])->get();
+        $length = count($tasks);
         return view('client.lesson.index')->with([
-            'tasks' => $tasks
+            'task' => $task,
+            'lesson' => $lesson,
+            'length' => $length
+        ]);
+    }
+
+    public function showNext($lessonID,$taskID)
+    {
+        $lesson = Lesson::where('id',$lessonID)->first();
+        $task = Task::where(['lesson_id'=>$lessonID,'id' => $taskID])->first();
+        $tasks = Task::where(['lesson_id'=>$lessonID])->get();
+        $length = count($tasks);
+        return view('client.lesson.index')->with([
+            'task' => $task,
+            'lesson' => $lesson,
+            'length' => $length
         ]);
     }
 }
