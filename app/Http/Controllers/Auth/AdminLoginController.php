@@ -1,9 +1,9 @@
 <?php
 
-namespace Codecademy\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use Codecademy\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Auth;
 class AdminLoginController extends Controller
 {

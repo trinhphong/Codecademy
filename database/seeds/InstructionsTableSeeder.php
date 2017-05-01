@@ -35,11 +35,5 @@ class InstructionsTableSeeder extends Seeder
             'solution' => '<!DOCTYPE html>',
             'task_id' => '2',
         ]);
-
-        DB::table('instructions')->insert([
-            'content' => 'On line 1, add the <!DOCTYPE html> declaration.',
-            'solution' => '<!DOCTYPE html>abc',
-            'task_id' => '2',
-        ]);
     }
 }

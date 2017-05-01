@@ -1,11 +1,11 @@
 <?php
 
-namespace Codecademy\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Codecademy\Lesson;
+use App\Lesson;
 use Illuminate\Http\Request;
-use Codecademy\Course;
-use Codecademy\Chapter;
+use App\Course;
+use App\Chapter;
 class HomeController extends Controller
 {
     /**

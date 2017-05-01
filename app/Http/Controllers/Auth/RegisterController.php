@@ -1,9 +1,9 @@
 <?php
 
-namespace Codecademy\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use Codecademy\User;
-use Codecademy\Http\Controllers\Controller;
+use App\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

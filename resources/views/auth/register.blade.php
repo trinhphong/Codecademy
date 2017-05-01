@@ -1,15 +1,11 @@
 @extends('layouts.app')
 
-@section('style_body')
-    style="background: url('{{asset('image/login/login_background.jpg')}}')"
-@endsection
-
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2 mar_top">
-            <div class="panel panel-default my_panel">
-                <div class="panel-heading" style="border: 0;box-shadow:0 0 0 0 rgba(255,255,255,.24),0 0 0 0 rgba(255,255,255,.19); color: white;background:rgba(40,57,101,.3);">Register</div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Register</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}

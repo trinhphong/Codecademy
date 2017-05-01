@@ -1,8 +1,8 @@
 <?php
 
-namespace Codecademy\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Codecademy\Instruction;
+use App\Instruction;
 use Illuminate\Http\Request;
 
 class InstructionController extends Controller

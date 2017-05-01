@@ -77,7 +77,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Codecademy\User::class,
+            'model' => App\User::class,
         ],
 
         'admins' => [
