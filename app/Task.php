@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Codecademy;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,11 +12,11 @@ class Task extends Model
 
     public function lesson()
     {
-        return $this->belongsTo('App\Lesson');
+        return $this->belongsTo('Codecademy\Lesson');
     }
 
     public function instruction ()
     {
-        return $this->hasMany('App\instruction');
+        return $this->hasMany('Codecademy\instruction');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Codecademy;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +12,6 @@ class Course extends Model
 
     public function chapter()
     {
-        return $this->hasMany('App\Chapter');
+        return $this->hasMany('Codecademy\Chapter');
     }
 }

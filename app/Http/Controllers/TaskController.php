@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Codecademy\Http\Controllers;
 
-use App\Instruction;
-use App\Lesson;
+use Codecademy\Instruction;
+use Codecademy\Lesson;
 use Illuminate\Http\Request;
-use App\Task;
+use Codecademy\Task;
 
 class TaskController extends Controller
 {

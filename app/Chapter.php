@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Codecademy;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,10 +11,10 @@ class Chapter extends Model
     public $timestamps = false;
 
     public function course() {
-        return $this->belongsTo('App\Course');
+        return $this->belongsTo('Codecademy\Course');
     }
 
     public function lesson() {
-        return $this->hasMany('App\Lesson');
+        return $this->hasMany('Codecademy\Lesson');
     }
 }

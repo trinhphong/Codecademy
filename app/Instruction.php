@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Codecademy;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +12,6 @@ class Instruction extends Model
 
     public function task()
     {
-        return $this->belongsTo('App\Task');
+        return $this->belongsTo('Codecademy\Task');
     }
 }
