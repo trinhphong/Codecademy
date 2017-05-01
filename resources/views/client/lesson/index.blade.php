@@ -36,7 +36,9 @@
                             </div>
                             <div class="panel panel-body">
                                 @foreach($instructions as $instruction)
-                                    <p>{{$instruction->content}}</p>
+                                    <div id="Ins-{{$instruction->id}}">
+                                        <p>{{$instruction->content}}</p>
+                                    </div>
                                     @endforeach
                             </div>
                         </div>
@@ -44,7 +46,7 @@
                 </div>
             </div>
             <div class="col-md-4" style="background-color: #282a36;position: absolute;top: 7%; right: 33.33333333333334% ; bottom: 5%; left: 33.33333333333333%;">
-                <form method="get" id="submit-form" style="height: 100%">
+                <form method="POST" id="submit-form" style="height: 100%">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">index.html</a></li>
                         <li><a data-toggle="tab" href="#menu1">style.css</a></li>
@@ -84,6 +86,7 @@
                 @endif
         </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
     <script>
         var editor_html = CodeMirror.fromTextArea(document.getElementById("editor-html"), {
             mode: "text/html",
@@ -104,9 +107,41 @@
             var css = $('#editor-css').val();
             var result = $('#result-content');
             result.ready(function () {
-                result.contents().find("head").append('<style>'+css+'</style>');
+                result.contents().find("head").append('<style>' + css + '</style>');
                 result.contents().find("body").html(html);
             });
         }
+
+        jQuery("#submit-form").submit(function (e) {
+            e.preventDefault();
+            var html = $('#editor-html').val();
+            var css = $('#editor-css').val();
+            var result = $('#result-content');
+            result.ready(function () {
+                result.contents().find("head").append('<style>'+css+'</style>');
+                result.contents().find("body").html(html);
+            });
+            var codeUser = editor_html.getValue();
+            $.ajax({
+                url: '{{route('task.check')}}',
+                type: 'POST',
+                data: {
+                    taskID: '{{$task->id}}',
+                    codeUser: codeUser,
+                },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    var successInstruction = response.successInstructions;
+                    successInstruction.forEach(function (item) {
+                        var ins = $('#Ins-'+item).find('p');
+                        ins.css('color','red');
+                    });
+                }
+            })
+        });
     </script>
+
+
 @endsection
