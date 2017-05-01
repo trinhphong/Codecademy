@@ -29,6 +29,7 @@ Let\'s get started!',
   <head>
     <title>An Unexpected Journey</title>
     <link href=\'https://fonts.googleapis.com/css?family=Playfair+Display:900|Raleway:300\' rel=\'stylesheet\' type=\'text/css\'>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
   	<div class="container">
@@ -129,6 +130,7 @@ Note: If you don\'t use the doctype declaration, your HTML code will likely stil
   <title>Animals Around the World</title>
 </head>
 <body>
+  <!-- cmt con cac -->
   <h1>The Brown Bear</h1>
   <p>The brown bear (Ursus arctos) is native to parts of northern Eurasia and North America. Its conservation status is currently "Least Concern." There are many subspecies within the brown bear species, including the Atlas bear and the Himalayan brown bear.</p>
   <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">Learn More</a>
