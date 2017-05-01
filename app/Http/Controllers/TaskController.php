@@ -53,4 +53,25 @@ class TaskController extends Controller
             'instructions' => $instructions
         ]);
     }
+
+    public function check(Request $request)
+    {
+        $listInstructions = Instruction::where('task_id',$request->taskID)->get();
+        $codeValue = $request->codeUser;
+
+        $successInstructions = array();
+
+        foreach ($listInstructions as $instruction)
+        {
+            if(str_contains(strtolower($codeValue),strtolower($instruction->solution))) {
+                $successInstructions[] = $instruction->id;
+            }
+        }
+
+        $response = [
+          'successInstructions' => $successInstructions
+        ];
+
+        return response()->json($response,200);
+    }
 }

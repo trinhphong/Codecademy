@@ -18,11 +18,10 @@ class InstructionsTableSeeder extends Seeder
   <head>
     <title>An Unexpected Journey</title>
     <link href=\'https://fonts.googleapis.com/css?family=Playfair+Display:900|Raleway:300\' rel=\'stylesheet\' type=\'text/css\'>
-    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
   	<div class="container">
-  		<h1>An Unexpected Journey</h1>
+  		<h1>TEST</h1>
   	  <a class="btn" href="#">Get Started</a>
   	</div>
   </body>
