@@ -20,7 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/lessons/{lesson}/tasks/','TaskController@index')->name('task.show');
 Route::get('/lessons/{lesson}/tasks/{taskID}','TaskController@showNext')->name('task.showNext');
-Route::post('/task/check','TaskController@check')->name('task.check');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
